@@ -1,12 +1,41 @@
+import "package:donutapp_2b_samos/utils/smoothie_tile.dart";
 import "package:flutter/material.dart";
 
- class SmoothieTab extends StatelessWidget {
-  const SmoothieTab({super.key});
+class SmoothieTab extends StatelessWidget {
+
+  final List smoothieOnSale = [
+    // [smoothieFlavor, smoothieStore, smoothiePrice, smoothieColor, imageName]
+    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
+    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
+    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
+    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
+    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
+    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
+    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+  ];
+
+  SmoothieTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("SmoothieTab")
+    return GridView.builder(
+      itemCount: smoothieOnSale.length,
+      padding: const EdgeInsets.all(8.0),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //Numero de columnas
+        crossAxisCount: 2,
+        //Relacion de aspecto
+        childAspectRatio: 1/1.5),
+      itemBuilder: (context, index) {
+        return SmoothieTile(
+          smoothieFlavor: smoothieOnSale[index][0],
+          smoothieStore: smoothieOnSale[index][1],
+          smoothiePrice: smoothieOnSale[index][2],
+          smoothieColor: smoothieOnSale[index][3],
+          imageName: smoothieOnSale[index][4],
+        );
+      },
     );
   }
 }

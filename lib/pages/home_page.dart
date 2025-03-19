@@ -1,7 +1,7 @@
 import 'package:donutapp_2b_samos/tabs/burger_tab.dart';
 import 'package:donutapp_2b_samos/tabs/donut_tab.dart';
-import 'package:donutapp_2b_samos/tabs/pancakes_tab.dart';
-import 'package:donutapp_2b_samos/tabs/pizaa_tab.dart';
+import 'package:donutapp_2b_samos/tabs/pancake_tab.dart';
+import 'package:donutapp_2b_samos/tabs/pizza_tab.dart';
 import 'package:donutapp_2b_samos/tabs/smoothie_tab.dart';
 import 'package:donutapp_2b_samos/utils/my_tab.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
             PizzaTab(),
             BurgerTab(),
             SmoothieTab(),
-            PancakesTab(),
+            PancakeTab(),
             DonutTab()
             ]),
           ),
