@@ -56,17 +56,17 @@ class DonutTile extends StatelessWidget {
             fontSize: 17)),
             //LoveIconAddButton
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(11.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(Icons.favorite_border,
-                  color: Colors.pink[400],
+                  color: Colors.black,
                   ),
                   const Text(
                     "Add",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.underline),
                     ),

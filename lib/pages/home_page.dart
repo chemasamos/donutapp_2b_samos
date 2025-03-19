@@ -77,6 +77,51 @@ class _HomePageState extends State<HomePage> {
             ]),
           ),
           //carrito
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              // Poner los elementos en los extremos de la fila
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 28),
+                  child: Column(
+                    //Alinearlo a la izquierda
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('2 Item | \$45',
+                      style: TextStyle(
+                        //Tamaño
+                        fontSize: 18,
+                        //Negritas
+                        fontWeight: FontWeight.bold
+
+                       ),
+                      ),
+                      Text('ya con gasto de envio bro',
+                      style: TextStyle(
+                        fontSize: 12,),
+                      ),
+                    ],
+                  )),
+                  ElevatedButton(
+                    onPressed:() {},
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.pink[70],
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 12
+                    )),
+                    child: const Text('Carrito lokita',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      ),
+                    )
+                  )
+              ],
+            ),
+          ),
           ],
         )
       ),
