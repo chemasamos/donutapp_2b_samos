@@ -30,7 +30,7 @@ class SmoothieTile extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(24),
                       bottomLeft: Radius.circular(24))),
-                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
                     child: Text('\$$smoothiePrice',
                     style: TextStyle(fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -40,7 +40,7 @@ class SmoothieTile extends StatelessWidget {
               ),
             //SmoothiePic
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 34),
+              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 34),
               child: Image.asset(imageName)),
             //SmoothieText
             Text(smoothieFlavor,
