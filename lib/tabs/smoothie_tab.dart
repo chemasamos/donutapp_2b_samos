@@ -5,14 +5,15 @@ class SmoothieTab extends StatelessWidget {
 
   final List smoothieOnSale = [
     // [smoothieFlavor, smoothieStore, smoothiePrice, smoothieColor, imageName]
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+    ["Cherry", "Starbucks", "36", Colors.red, "lib/images/cereza_smoothie.png"],
+    ["Coconut", "Bombuté", "54", Colors.brown,  "lib/images/coco_smoothie.png"],
+    ["Lemon", "Bova Tea", "84", Colors.green, "lib/images/limon_smoothie.png"],
+    ["Apple", "TaBoo", "95", Colors.red, "lib/images/manzana_smoothie.png"],
+    ["Melon", "POP Tea", "36", Colors.pink, "lib/images/melon_smoothie.png"],
+    ["Orange", "Gong Cha", "54", Colors.orange,  "lib/images/naranja_smoothie.png"],
+    ["Banana", "Tapioca Flavors", "84", Colors.yellow, "lib/images/platano_smoothie.png"],
+    ["Eggplant", "Bubbaplop", "95", Colors.purple, "lib/images/berenjena_smoothie.png"],
+
   ];
 
   SmoothieTab({super.key});
@@ -21,7 +22,7 @@ class SmoothieTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: smoothieOnSale.length,
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(7.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         //Numero de columnas
         crossAxisCount: 2,

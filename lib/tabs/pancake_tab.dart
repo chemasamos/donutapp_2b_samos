@@ -5,14 +5,14 @@ class PancakeTab extends StatelessWidget {
 
   final List pancakeOnSale = [
     // [pancakeFlavor, pancakeStore, pancakePrice, pancakeColor, imageName]
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+    ["FroggyMugged","Cantaritos","20",Colors.pinkAccent, "lib/images/frogg_pancake.png"],
+    ["All clasic","Colom","120",Colors.blueGrey,  "lib/images/frutita_pancake.png"],
+    ["Absolut", "Donde","15",Colors.pink, "lib/images/mieleros_pancake.png"],
+    ["Piketito","Mixe","90",Colors.purple, "lib/images/morero_pancake.png"],
+    ["Normales","Kukis","70",Colors.yellow, "lib/images/normales_pancake.png"],
+    ["Roblox","Vans","37",Colors.blue,  "lib/images/roblo_pancake.png"],
+    ["Rockk", "HXDERBEZ","10",Colors.brown, "lib/images/rock_pancake.png"],
+    ["BunnyBun","lol","95",Colors.grey, "lib/images/bun_pancake.png"],
   ];
 
   PancakeTab({super.key});
@@ -21,7 +21,7 @@ class PancakeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: pancakeOnSale.length,
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(7.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         //Numero de columnas
         crossAxisCount: 2,

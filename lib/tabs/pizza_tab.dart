@@ -5,14 +5,15 @@ class PizzaTab extends StatelessWidget {
 
   final List pizzaOnSale = [
     // [pizzaFlavor, pizzaStore, pizzaPrice, pizzaColor, imageName]
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+    ["Anchovies", "Pizza Hut", "36", Colors.red, "lib/images/anchoas_pizza.png"],
+    ["Shrimp", "Messinas", "54", Colors.yellow,  "lib/images/camarones_pizza.png"],
+    ["Mushroom", "Costco", "84", Colors.brown, "lib/images/champiñon_pizza.png"],
+    ["Pepperoni", "Domino's", "95", Colors.purple, "lib/images/peperoni_pizza.png"],
+    ["Peppers", "Pizza y corre", "36", Colors.green, "lib/images/pimiento_pizza.png"],
+    ["Salami", "Sanetis", "84", Colors.brown, "lib/images/salami_pizza.png"],
+    ["Pineapple", "Superpizza", "54", Colors.yellow,  "lib/images/piña_pizza.png"],
+    ["Sausage", "Baleros", "95", Colors.red, "lib/images/salchicha_pizza.png"],
+
   ];
 
   PizzaTab({super.key});
@@ -21,7 +22,7 @@ class PizzaTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: pizzaOnSale.length,
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(7.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         //Numero de columnas
         crossAxisCount: 2,

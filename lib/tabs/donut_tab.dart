@@ -10,10 +10,10 @@ class DonutTab extends StatelessWidget {
     ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
     ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
     ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+    ["katita","kitis y algo mas","100",Colors.pink, "lib/images/kat_donut.png"],
+    ["kitilibum","kitis y algo mas","401",Colors.deepPurple,  "lib/images/kiti_donut.png"],
+    ["dononon", "seth roguen","700",Colors.cyan, "lib/images/guap_donut.png"],
+    ["allinone","cocina economica","95",Colors.orange, "lib/images/spagueti_donut.png"],
   ];
 
   DonutTab({super.key});
@@ -22,7 +22,7 @@ class DonutTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: donutsOnSale.length,
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(7.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         //Numero de columnas
         crossAxisCount: 2,

@@ -56,7 +56,7 @@ class PizzaTile extends StatelessWidget {
             fontSize: 17)),
             //LoveIconAddButton
             Padding(
-              padding: const EdgeInsets.all(11.0),
+              padding: const EdgeInsets.all(10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -66,7 +66,7 @@ class PizzaTile extends StatelessWidget {
                   const Text(
                     "Add",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 13,
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.underline),
                     ),

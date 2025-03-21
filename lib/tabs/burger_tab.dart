@@ -6,14 +6,14 @@ import "package:flutter/material.dart";
 
   final List burgerOnSale = [
     // [donutFlavor, donutStore, donutPrice, donutColor, imageName]
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
-    ["Gaxiola Favorit","Kukis","36",Colors.pinkAccent, "lib/images/icecream_donut.png"],
-    ["WichoPie","Colom","40",Colors.purpleAccent,  "lib/images/strawberry_donut.png"],
-    ["Jagger", "Pollo Brujo","700",Colors.purple, "lib/images/grape_donut.png"],
-    ["Bacardi","Mixe","95",Colors.brown, "lib/images/chocolate_donut.png"],
+    ["The Classic", "Grill House", "40", Colors.green, "lib/images/classic_burger.png"],
+    ["The Special", "Flame Burger", "50", Colors.orange, "lib/images/special_burger.png"],
+    ["Double Flavor", "Stacked Buns", "90", Colors.cyan, "lib/images/doublefLavor_Burger.png"],
+    ["The Gourmet", "Prime Bites", "100", Colors.teal, "lib/images/gourmet_burger.png"],
+    ["Supreme Delight", "Grill House", "38", Colors.pink, "lib/images/supreme_burger.png"],
+    ["Roger Classic", "Flame Burger", "48", Colors.yellow, "lib/images/roger_burger.png"],
+    ["Alan Classic", "Stacked Buns", "88", Colors.indigo, "lib/images/alan_burger.png"],
+    ["Chilli Spicy", "Prime Bites", "80", Colors.lime, "lib/images/spicy_burger.png"]
   ];
 
   BurgerTab({super.key});
@@ -22,7 +22,7 @@ import "package:flutter/material.dart";
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: burgerOnSale.length,
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(7.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         //Numero de columnas
         crossAxisCount: 2,
