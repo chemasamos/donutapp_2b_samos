@@ -2,6 +2,7 @@ import "package:donutapp_2b_samos/utils/smoothie_tile.dart";
 import "package:flutter/material.dart";
 
 class SmoothieTab extends StatelessWidget {
+  final Function(double) onAdd;
 
   final List smoothieOnSale = [
     // [smoothieFlavor, smoothieStore, smoothiePrice, smoothieColor, imageName]
@@ -16,7 +17,7 @@ class SmoothieTab extends StatelessWidget {
 
   ];
 
-  SmoothieTab({super.key});
+  SmoothieTab({super.key, required this.onAdd});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class SmoothieTab extends StatelessWidget {
           smoothiePrice: smoothieOnSale[index][2],
           smoothieColor: smoothieOnSale[index][3],
           imageName: smoothieOnSale[index][4],
+          onAdd: () => onAdd(double.parse(smoothieOnSale[index][2])),
         );
       },
     );

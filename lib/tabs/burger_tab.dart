@@ -1,8 +1,8 @@
 import "package:donutapp_2b_samos/utils/burger_tile.dart";
 import "package:flutter/material.dart";
 
- class BurgerTab extends StatelessWidget {
-
+class BurgerTab extends StatelessWidget {
+  final Function(double) onAdd; // Recibe la función onAdd
 
   final List burgerOnSale = [
     // [donutFlavor, donutStore, donutPrice, donutColor, imageName]
@@ -16,7 +16,7 @@ import "package:flutter/material.dart";
     ["Chilli Spicy", "Prime Bites", "80", Colors.lime, "lib/images/spicy_burger.png"]
   ];
 
-  BurgerTab({super.key});
+  BurgerTab({super.key, required this.onAdd}); // Añade onAdd al constructor
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,9 @@ import "package:flutter/material.dart";
       itemCount: burgerOnSale.length,
       padding: const EdgeInsets.all(7.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //Numero de columnas
-        crossAxisCount: 2,
-        //Relacion de aspecto
-        childAspectRatio: 1/1.5),
+        crossAxisCount: 2, // Número de columnas
+        childAspectRatio: 1 / 1.5, // Relación de aspecto
+      ),
       itemBuilder: (context, index) {
         return BurgerTile(
           burgerFlavor: burgerOnSale[index][0],
@@ -35,6 +34,7 @@ import "package:flutter/material.dart";
           burgerPrice: burgerOnSale[index][2],
           burgerColor: burgerOnSale[index][3],
           imageName: burgerOnSale[index][4],
+          onAdd: () => onAdd(double.parse(burgerOnSale[index][2])), // Pasa onAdd con el precio
         );
       },
     );

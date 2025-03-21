@@ -2,6 +2,7 @@ import "package:donutapp_2b_samos/utils/pancake_tile.dart";
 import "package:flutter/material.dart";
 
 class PancakeTab extends StatelessWidget {
+  final Function(double) onAdd; // Recibe la función onAdd
 
   final List pancakeOnSale = [
     // [pancakeFlavor, pancakeStore, pancakePrice, pancakeColor, imageName]
@@ -15,7 +16,7 @@ class PancakeTab extends StatelessWidget {
     ["BunnyBun","lol","95",Colors.grey, "lib/images/bun_pancake.png"],
   ];
 
-  PancakeTab({super.key});
+  PancakeTab({super.key, required this.onAdd});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class PancakeTab extends StatelessWidget {
           pancakePrice: pancakeOnSale[index][2],
           pancakeColor: pancakeOnSale[index][3],
           imageName: pancakeOnSale[index][4],
+          onAdd: () => onAdd(double.parse(pancakeOnSale[index][2])), // Pasa onAdd con el precio
         );
       },
     );

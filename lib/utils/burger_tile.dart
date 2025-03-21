@@ -6,22 +6,31 @@ class BurgerTile extends StatelessWidget {
   final String burgerPrice;
   final dynamic burgerColor;
   final String imageName;
-  const BurgerTile 
-  ({super.key, required this.burgerFlavor,required this.burgerStore, required this.burgerPrice, this.burgerColor, required this.imageName,});
+  final VoidCallback onAdd;
+
+  const BurgerTile({
+    super.key,
+    required this.burgerFlavor,
+    required this.burgerStore,
+    required this.burgerPrice,
+    this.burgerColor,
+    required this.imageName,
+    required this.onAdd,
+  });
 
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
         decoration: BoxDecoration(
-          color: burgerColor[100], 
-          borderRadius: BorderRadius.circular(24)),
+          color: burgerColor[100],
+          borderRadius: BorderRadius.circular(24),
+        ),
         child: Column(
           children: [
-            //PriceTag
+            // PriceTag
             Row(
-              //Alinea a la derecha
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
@@ -29,51 +38,52 @@ class BurgerTile extends StatelessWidget {
                     color: burgerColor[200],
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(24),
-                      bottomLeft: Radius.circular(24))),
+                      bottomLeft: Radius.circular(24),
+                    ),
+                  ),
                   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
-                    child: Text('\$$burgerPrice',
-                    style: TextStyle(fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: burgerColor[800])),
+                  child: Text('\$$burgerPrice',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: burgerColor[800],
+                      )),
                 ),
               ],
-              ),
-            //BurgerPic
+            ),
+            // BurgerPic
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 34),
-              child: Image.asset(imageName)),
-            //BurgerText
-            Text(burgerFlavor,
-            style: TextStyle(fontWeight: FontWeight.bold,
-            fontSize: 20)),
-
-            const SizedBox(
-              height: 4,
+              child: Image.asset(imageName),
             ),
-            //Agregar el texto de la tienda
-            Text(burgerStore,
-            style: TextStyle(
-            fontSize: 17)),
-            //LoveIconAddButton
+            // BurgerText
+            Text(burgerFlavor,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            const SizedBox(height: 4),
+            // Tienda
+            Text(burgerStore, style: TextStyle(fontSize: 17)),
+            // LoveIconAddButton
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.favorite_border,
-                  color: Colors.black,
-                  ),
-                  const Text(
-                    "Add",
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline),
+                  Icon(Icons.favorite_border, color: Colors.black),
+                  GestureDetector(
+                    onTap: onAdd,
+                    child: const Text(
+                      "Add",
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
+                  ),
                 ],
               ),
-            )
-        ],
+            ),
+          ],
         ),
       ),
     );

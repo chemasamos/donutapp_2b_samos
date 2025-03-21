@@ -14,19 +14,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int itemCount = 0; // Cantidad de ítems
+  double totalPrice = 0.0; // Precio total
+
+  // Función para agregar un ítem
+  void addItem(double price) {
+    setState(() {
+      itemCount++;
+      totalPrice += price;
+    });
+  }
+
   // Lista de tabs
   List<Widget> myTabs = [
-    //pizza Tab
     MyTab(iconPath: 'lib/icons/pizza.png'),
-    //BurgerTab
     MyTab(iconPath: 'lib/icons/burger.png'),
-    //SmoothieTab
     MyTab(iconPath: 'lib/icons/smoothie.png'),
-    //PancakeTab
     MyTab(iconPath: 'lib/icons/pancakes.png'),
-    //DonutTab
     MyTab(iconPath: 'lib/icons/donut.png'),
-    ];
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -35,95 +41,88 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          // icono izquierdo
           leading: Icon(
             Icons.menu,
             color: Colors.pinkAccent[800],
           ),
-          // Icono derecho
-          actions: const[Padding(
-            padding: EdgeInsets.only(right: 24.0),
-            child: Icon(Icons.person),
-          )]
+          actions: const [
+            Padding(
+              padding: EdgeInsets.only(right: 24.0),
+              child: Icon(Icons.person),
+            ),
+          ],
         ),
         body: Column(
           children: [
-          // texto principal
+            // Texto principal
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 18),
               child: Row(
-                children: const[
-                  Text("I want to ", style: TextStyle(fontSize: 32 )),
-                  Text("Tragar", style: TextStyle(
-                  // Letra tamaño
-                    fontSize: 32,
-                  // Negritas
-                  fontWeight: FontWeight.bold,
-                  // Subrayado
-                  decoration: TextDecoration.underline))
-                  ],
+                children: const [
+                  Text("I want to ", style: TextStyle(fontSize: 32)),
+                  Text("Tragar",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                      )),
+                ],
               ),
             ),
-          // tabBar
-          TabBar(tabs: myTabs),
-          //tabBarview
-          Expanded(
-            child: TabBarView(children: [
-            PizzaTab(),
-            BurgerTab(),
-            SmoothieTab(),
-            PancakeTab(),
-            DonutTab()
-            ]),
-          ),
-          //carrito
-          Container(
-            color: Colors.white,
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              // Poner los elementos en los extremos de la fila
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 28),
-                  child: Column(
-                    //Alinearlo a la izquierda
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('2 Item | \$45',
-                      style: TextStyle(
-                        //Tamaño
-                        fontSize: 18,
-                        //Negritas
-                        fontWeight: FontWeight.bold
-
-                       ),
-                      ),
-                      Text('ya con gasto de envio bro',
-                      style: TextStyle(
-                        fontSize: 12,),
-                      ),
-                    ],
-                  )),
-                  ElevatedButton(
-                    onPressed:() {},
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.pink[70],
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 12
-                    )),
-                    child: const Text('Carrito lokita',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      ),
-                    )
-                  )
-              ],
+            // TabBar
+            TabBar(tabs: myTabs),
+            // TabBarView
+            Expanded(
+              child: TabBarView(
+                children: [
+                  PizzaTab(onAdd: addItem),
+                  BurgerTab(onAdd: addItem),
+                  SmoothieTab(onAdd: addItem),
+                  PancakeTab(onAdd: addItem),
+                  DonutTab(onAdd: addItem),
+                ],
+              ),
             ),
-          ),
+            // Carrito
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 28),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('$itemCount Item | \$${totalPrice.toStringAsFixed(2)}',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        Text('ya con gasto de envio bro',
+                            style: TextStyle(fontSize: 12)),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.pink[70],
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 12),
+                    ),
+                    child: const Text('Carrito lokita',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        )),
+                  ),
+                ],
+              ),
+            ),
           ],
-        )
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import "package:donutapp_2b_samos/utils/pizza_tile.dart";
 import "package:flutter/material.dart";
 
 class PizzaTab extends StatelessWidget {
+  final Function(double) onAdd;
 
   final List pizzaOnSale = [
     // [pizzaFlavor, pizzaStore, pizzaPrice, pizzaColor, imageName]
@@ -16,7 +17,7 @@ class PizzaTab extends StatelessWidget {
 
   ];
 
-  PizzaTab({super.key});
+  PizzaTab({super.key, required this.onAdd});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class PizzaTab extends StatelessWidget {
           pizzaPrice: pizzaOnSale[index][2],
           pizzaColor: pizzaOnSale[index][3],
           imageName: pizzaOnSale[index][4],
+          onAdd: () => onAdd(double.parse(pizzaOnSale[index][2])),
         );
       },
     );
